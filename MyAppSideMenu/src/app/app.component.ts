@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { LoginPage } from './login/login.page';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -19,6 +21,11 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    }, 
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'login'
     }
   ];
 
@@ -31,9 +38,10 @@ export class AppComponent {
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+    this.rootPage=LoginPage;
+    // this.platform.ready().then(() => {
+    //   this.statusBar.styleDefault();
+    //   this.splashScreen.hide();
+    // });
   }
 }
